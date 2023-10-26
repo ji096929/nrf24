@@ -1,0 +1,36 @@
+*.rar
+*.zip
+*.o
+*.d
+*.crf
+*.htm
+*.dep
+*.map
+*.bak
+*.lnp
+*.lst
+*.ini
+*.iex
+*.sct
+*.scvd
+*.uvguix
+*.dbg*
+*.uvguix.*
+.mxproject
+ 
+RTE/
+Templates/
+Examples/
+AS01-ML01D/Demo程序/AS01 ML01DP5AS01 ML01DP5/
+
+!*.uvprojx
+!*.h
+!*.c
+!*.ioc
+!*.axf
+!*.bin
+!*.hex
+!as06_vtb01.zip
+!nRF24L01P-EK.zip
+!Software examples using ShockBurst modes in nRF24L01 and nRF24LU12.zip
+

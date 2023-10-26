@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/文档/RM_files/zeyao/Custom_controller/AS01-ML01D/Demo程序/demo_nRF24L01/Demo_nRF24L01_V3_0_ZeYao/Demo_RF24L01_Stm32F103/RX_TEST/Core/Src",
+      "program": "d:/文档/RM_files/zeyao/Custom_controller/AS01-ML01D/Demo程序/demo_nRF24L01/Demo_nRF24L01_V3_0_ZeYao/Demo_RF24L01_Stm32F103/RX_TEST/Core/Src/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
