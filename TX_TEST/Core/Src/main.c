@@ -30,6 +30,7 @@
 #include "drv_spi.h"
 #include "debug.h"
 #include "string.h"
+#include "lcd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,6 +108,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim1);
   HAL_TIM_Base_Start_IT(&htim2);
+  TFT_LCD_Init();
+  LCD_Init(&LCD_bus_2);
+  
   RF24L01_Port_Init();
   // HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);
   // NRF24L01_Read_Status_Register(&NRF24L01_rtx);
@@ -232,8 +236,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   
       if (htim == (&htim2))
   {
-   
-    	//NRF_Intercommunication( NRF24L01_rtx, NRF24L01_bus );
+    LCD_ShowString(&LCD_bus_2, 1, 1, "NAME", BLACK, WHITE, 1, 0);
+    LCD_ShowString(&LCD_bus_2, 1, 6, "ID", BLACK, WHITE, 1, 0);
+    LCD_ShowString(&LCD_bus_2, 1, 10, "VALUE", BLACK, WHITE, 1, 0);
+    // NRF_Intercommunication( NRF24L01_rtx, NRF24L01_bus );
   }
 }
 /* USER CODE END 4 */

@@ -1,5 +1,7 @@
 --cpu Cortex-M3
 "hal_spi_ctr\startup_stm32f103xb.o"
+"hal_spi_ctr\remote_control.o"
+"hal_spi_ctr\debug.o"
 "hal_spi_ctr\main.o"
 "hal_spi_ctr\gpio.o"
 "hal_spi_ctr\adc.o"
@@ -8,8 +10,6 @@
 "hal_spi_ctr\tim.o"
 "hal_spi_ctr\stm32f1xx_it.o"
 "hal_spi_ctr\stm32f1xx_hal_msp.o"
-"hal_spi_ctr\remote_control.o"
-"hal_spi_ctr\debug.o"
 "hal_spi_ctr\stm32f1xx_hal_gpio_ex.o"
 "hal_spi_ctr\stm32f1xx_hal_adc.o"
 "hal_spi_ctr\stm32f1xx_hal_adc_ex.o"
@@ -31,6 +31,7 @@
 "hal_spi_ctr\drv_rf24l01.o"
 "hal_spi_ctr\lcd.o"
 "hal_spi_ctr\zk.o"
+"hal_spi_ctr\lcd_bsp.o"
 --strict --scatter "HAL_SPI_CTR\HAL_SPI_CTR.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -1,5 +1,5 @@
-#ifndef __LCD_INIT_H
-#define __LCD_INIT_H 
+#ifndef __LCD_BSP_H
+#define __LCD_BSP_H 
 
 #ifdef __cplusplus
 extern "C" {
@@ -65,8 +65,8 @@ typedef struct
 //-----------------LCD¶Ë¿Ú¶¨Òå---------------- 
 
 
-#define ZK_CS_Clr()    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,RESET)//CS2
-#define ZK_CS_Set()    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,SET)
+#define ZK_CS_Clr()    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET)//CS2
+#define ZK_CS_Set()    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET)
 
 
 extern uint8_t SPI1_ReadWriteByte(uint8_t TxData);

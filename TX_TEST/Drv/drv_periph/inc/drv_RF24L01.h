@@ -41,7 +41,7 @@
 #define SPI_NSS_GPIO_PIN          GPIO_PIN_3
 
 /*SPI接口定义*/
-#define SPI_PORT					  hspi1						//SPI接口
+#define NRF_SPI_PORT					  hspi1						//SPI接口
 
 /** 口线操作函数定义 */
 #define RF24L01_SET_CE_HIGH( )			HAL_GPIO_WritePin(RF24L01_CE_GPIO_PORT,RF24L01_CE_GPIO_PIN,GPIO_PIN_SET)	

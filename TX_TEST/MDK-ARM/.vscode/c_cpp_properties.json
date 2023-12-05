@@ -110,14 +110,15 @@
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drivers\\CMSIS\\Include",
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\drv_mcu\\inc",
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\drv_periph\\inc",
+                "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\app_lcd",
+                "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\bsp_lcd",
                 "D:\\software\\keil5\\ARM\\ARMCC\\include",
                 "D:\\software\\keil5\\ARM\\ARMCC\\include\\rw",
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\MDK-ARM",
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Core\\Src",
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drivers\\STM32F1xx_HAL_Driver\\Src",
                 "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\drv_mcu\\src",
-                "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\drv_periph\\src",
-                "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\app_lcd"
+                "d:\\文档\\RM_files\\Demo_RF24L01_Stm32F103\\debug_demo\\debug_demo\\TX_TEST\\Drv\\drv_periph\\src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

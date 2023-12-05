@@ -648,8 +648,8 @@ static uint8_t NRF24L01_RT(void* handle,uint8_t TxByte)
   */
 void RF24L01_Port_Init( void )
 {
-	NRF24L01_bus.handle=&SPI_PORT;
-	NRF24L01_rtx.handle=&SPI_PORT;
+	NRF24L01_bus.handle=&NRF_SPI_PORT;
+	NRF24L01_rtx.handle=&NRF_SPI_PORT;
 	NRF24L01_rtx.rtx_cmd=NRF24L01_RT;
 }
 
