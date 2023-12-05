@@ -1,0 +1,6 @@
+--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"
+-I.\RTE\_HAL_SPI_CTR
+-ID:\software\keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
+-ID:\software\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
+--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"
+--list startup_stm32f103xb.lst --xref -o hal_spi_ctr\startup_stm32f103xb.o --depend hal_spi_ctr\startup_stm32f103xb.d "startup_stm32f103xb.s"

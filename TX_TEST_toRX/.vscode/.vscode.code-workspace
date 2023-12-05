@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "drv_rf24l01.h": "c"
+        }
+    },
+    "extensions": {}
+}
