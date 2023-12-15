@@ -31,5 +31,6 @@ hal_spi_ctr\lcd_bsp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 hal_spi_ctr\lcd_bsp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 hal_spi_ctr\lcd_bsp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 hal_spi_ctr\lcd_bsp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+hal_spi_ctr\lcd_bsp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 hal_spi_ctr\lcd_bsp.o: ../Drv/app_lcd/lcd.h
 hal_spi_ctr\lcd_bsp.o: ../Core/Inc/spi.h

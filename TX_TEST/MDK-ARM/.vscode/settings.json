@@ -74,6 +74,7 @@
   "files.associations": {
     "drv_rf24l01.h": "c",
     "adc.h": "c",
-    "lcd_bsp.h": "c"
+    "lcd_bsp.h": "c",
+    "lcd.h": "c"
   }
 }

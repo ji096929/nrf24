@@ -29,3 +29,4 @@ hal_spi_ctr\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ha
 hal_spi_ctr\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 hal_spi_ctr\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 hal_spi_ctr\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+hal_spi_ctr\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h

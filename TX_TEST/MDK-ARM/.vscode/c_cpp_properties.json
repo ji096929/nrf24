@@ -196,7 +196,8 @@
                 "__yield()=",
                 "__vfp_status(x,y)=0"
             ],
-            "intelliSenseMode": "${default}"
+            "intelliSenseMode": "${default}",
+            "cppStandard": "c++23"
         }
     ],
     "version": 4

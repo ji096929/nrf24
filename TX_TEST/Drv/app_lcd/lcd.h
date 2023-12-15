@@ -26,26 +26,26 @@ void TFT_LCD_Init(void);
 void LCD_Init(LCD_line_t *LCD_bus);
 
 void LCD_Fill(LCD_line_t *LCD_bus,uint16_t xsta,uint16_t ysta,uint16_t xend,uint16_t yend,uint16_t color);
-void LCD_DrawPoint(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t color);//ÔÚÖ¸¶¨Î»ÖÃ»­Ò»¸öµã 
-void LCD_DrawLine(LCD_line_t *LCD_bus,uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint16_t color);//ÔÚÖ¸¶¨Î»ÖÃ»­Ò»ÌõÏß
-void LCD_DrawRectangle(LCD_line_t *LCD_bus,uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,uint16_t color);//ÔÚÖ¸¶¨Î»ÖÃ»­Ò»¸ö¾ØÐÎ
-void Draw_Circle(LCD_line_t *LCD_bus,uint16_t x0,uint16_t y0,uint8_t r,uint16_t color);//ÔÚÖ¸¶¨Î»ÖÃ»­Ò»¸öÔ²
+void LCD_DrawPoint(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t color);//ï¿½ï¿½Ö¸ï¿½ï¿½Î»ï¿½Ã»ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ 
+void LCD_DrawLine(LCD_line_t *LCD_bus,uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint16_t color);//ï¿½ï¿½Ö¸ï¿½ï¿½Î»ï¿½Ã»ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
+void LCD_DrawRectangle(LCD_line_t *LCD_bus,uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,uint16_t color);//ï¿½ï¿½Ö¸ï¿½ï¿½Î»ï¿½Ã»ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void Draw_Circle(LCD_line_t *LCD_bus,uint16_t x0,uint16_t y0,uint8_t r,uint16_t color);//ï¿½ï¿½Ö¸ï¿½ï¿½Î»ï¿½Ã»ï¿½Ò»ï¿½ï¿½Ô²
 
-void LCD_ShowChinese(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾ºº×Ö´®
-void LCD_ShowChinese12x12(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾µ¥¸ö12x12ºº×Ö
-void LCD_ShowChinese16x16(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾µ¥¸ö16x16ºº×Ö
-void LCD_ShowChinese24x24(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾µ¥¸ö24x24ºº×Ö
-void LCD_ShowChinese32x32(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾µ¥¸ö32x32ºº×Ö
+void LCD_ShowChinese(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ö´ï¿½
+void LCD_ShowChinese12x12(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½12x12ï¿½ï¿½ï¿½ï¿½
+void LCD_ShowChinese16x16(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½16x16ï¿½ï¿½ï¿½ï¿½
+void LCD_ShowChinese24x24(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½24x24ï¿½ï¿½ï¿½ï¿½
+void LCD_ShowChinese32x32(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t *s,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½32x32ï¿½ï¿½ï¿½ï¿½
 
-void LCD_ShowChar(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t num,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾Ò»¸ö×Ö·û
-void LCD_ShowString(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,const uint8_t *p,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ÏÔÊ¾×Ö·û´®
-uint32_t mypow(uint8_t m,uint8_t n);//ÇóÃÝ
-void LCD_ShowIntNum(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t num,uint8_t len,uint16_t fc,uint16_t bc,uint8_t sizey);//ÏÔÊ¾ÕûÊý±äÁ¿
-void LCD_ShowFloatNum1(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,float num,uint8_t len,uint16_t fc,uint16_t bc,uint8_t sizey);//ÏÔÊ¾Á½Î»Ð¡Êý±äÁ¿
+void LCD_ShowChar(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t num,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾Ò»ï¿½ï¿½ï¿½Ö·ï¿½
+void LCD_ShowString(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,const uint8_t *p,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode);//ï¿½ï¿½Ê¾ï¿½Ö·ï¿½ï¿½ï¿½
+uint32_t mypow(uint8_t m,uint8_t n);//ï¿½ï¿½ï¿½ï¿½
+void LCD_ShowIntNum(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t num,uint8_t len,uint16_t fc,uint16_t bc,uint8_t sizey);//ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void LCD_ShowFloatNum1(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,float num,uint8_t len,uint16_t fc,uint16_t bc,uint8_t sizey);//ï¿½ï¿½Ê¾ï¿½ï¿½Î»Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-void LCD_ShowPicture(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t length,uint16_t width,const uint8_t pic[]);//ÏÔÊ¾Í¼Æ¬
+void LCD_ShowPicture(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t length,uint16_t width,const uint8_t pic[]);//ï¿½ï¿½Ê¾Í¼Æ¬
 
-//×Ö¿âº¯Êý
+//ï¿½Ö¿âº¯ï¿½ï¿½
 void ZK_command(LCD_line_t *LCD_bus,uint8_t dat);
 uint8_t get_data_from_ROM(void);
 void get_n_bytes_data_from_ROM(LCD_line_t *LCD_bus,uint8_t AddrHigh,uint8_t AddrMid,uint8_t AddrLow,uint8_t *pBuff,uint8_t DataLen);
@@ -56,11 +56,9 @@ void Display_Asc_String(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t zk_nu
 void Display_Arial_TimesNewRoman(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint8_t zk_num,uint16_t fc,uint16_t bc);
 void Display_Arial_String(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t zk_num,uint8_t text[],uint16_t fc,uint16_t bc);
 void Display_TimesNewRoman_String(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint16_t zk_num,uint8_t text[],uint16_t fc,uint16_t bc);
+void ShowValue(void);
 
-
-
-	
-//»­±ÊÑÕÉ«
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
 #define WHITE         	 0xFFFF
 #define BLACK         	 0x0000	  
 #define BLUE           	 0x001F  
@@ -72,16 +70,22 @@ void Display_TimesNewRoman_String(LCD_line_t *LCD_bus,uint16_t x,uint16_t y,uint
 #define GREEN         	 0x07E0
 #define CYAN          	 0x7FFF
 #define YELLOW        	 0xFFE0
-#define BROWN 			 0XBC40 //×ØÉ«
-#define BRRED 			 0XFC07 //×ØºìÉ«
-#define GRAY  			 0X8430 //»ÒÉ«
-#define DARKBLUE      	 0X01CF	//ÉîÀ¶É«
-#define LIGHTBLUE      	 0X7D7C	//Ç³À¶É«  
-#define GRAYBLUE       	 0X5458 //»ÒÀ¶É«
-#define LIGHTGREEN     	 0X841F //Ç³ÂÌÉ«
-#define LGRAY 			 0XC618 //Ç³»ÒÉ«(PANNEL),´°Ìå±³¾°É«
-#define LGRAYBLUE        0XA651 //Ç³»ÒÀ¶É«(ÖÐ¼ä²ãÑÕÉ«)
-#define LBBLUE           0X2B12 //Ç³×ØÀ¶É«(Ñ¡ÔñÌõÄ¿µÄ·´É«)
+#define BROWN 			 0XBC40 //ï¿½ï¿½É«
+#define BRRED 			 0XFC07 //ï¿½Øºï¿½É«
+#define GRAY  			 0X8430 //ï¿½ï¿½É«
+#define DARKBLUE      	 0X01CF	//ï¿½ï¿½ï¿½ï¿½É«
+#define LIGHTBLUE      	 0X7D7C	//Ç³ï¿½ï¿½É«  
+#define GRAYBLUE       	 0X5458 //ï¿½ï¿½ï¿½ï¿½É«
+#define LIGHTGREEN     	 0X841F //Ç³ï¿½ï¿½É«
+#define LGRAY 			 0XC618 //Ç³ï¿½ï¿½É«(PANNEL),ï¿½ï¿½ï¿½å±³ï¿½ï¿½É«
+#define LGRAYBLUE        0XA651 //Ç³ï¿½ï¿½ï¿½ï¿½É«(ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½É«)
+#define LBBLUE           0X2B12 //Ç³ï¿½ï¿½ï¿½ï¿½É«(Ñ¡ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ä·ï¿½É«)
+#define NAME_X 		1
+#define ID_X		49
+#define VALUE_X		80
+#define NORMAL_SIZE	12
+
+
 
 #ifdef __cplusplus
 }

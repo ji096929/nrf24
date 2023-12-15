@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -22,6 +22,7 @@
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -31,6 +32,7 @@
 #include "debug.h"
 #include "string.h"
 #include "lcd.h"
+#include "remote_control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,7 +66,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 uint8_t a = 0;
 uint8_t b = 0;
-uint8_t count =0 ;
+uint8_t count = 0;
 uint8_t re[32];
 
 extern Value_True_t Value_True;
@@ -104,34 +106,39 @@ int main(void)
   MX_ADC1_Init();
   MX_SPI2_Init();
   MX_TIM1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim1);
   HAL_TIM_Base_Start_IT(&htim2);
-  TFT_LCD_Init();
-  LCD_Init(&LCD_bus_2);
   
+  //TFT_LCD_Init();
+  LCD_Init(&LCD_bus_2);
+
   RF24L01_Port_Init();
   // HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);
   // NRF24L01_Read_Status_Register(&NRF24L01_rtx);
   RF24L01_Init(&NRF24L01_rtx);
-  //NRF24L01_Set_Speed(&NRF24L01_rtx,SPEED_1M);
-    NRF24L01_Set_Power(&NRF24L01_rtx, PWR_18DB);
-  
-      NRF24L01_Write_Reg(&NRF24L01_rtx,RF_SETUP ,0x06 );
-   // NRF24L01_Write_Reg(&NRF24L01_rtx, CONFIG,0x02 );
-//  RF24L01_SET_CE_HIGH( );
-//  HAL_Delay(1100);
- RF24L01_Set_Mode(&NRF24L01_rtx, MODE_RX);
-    for(uint8_t i=0;i<32;i++)
-  {
-    NRF24L01_bus.TxPacket.Txbuffer[i] = i;
-  }
+  // NRF24L01_Set_Speed(&NRF24L01_rtx,SPEED_1M);
+  NRF24L01_Set_Power(&NRF24L01_rtx, PWR_18DB);
+
+  NRF24L01_Write_Reg(&NRF24L01_rtx, RF_SETUP, 0x06);
+  // NRF24L01_Write_Reg(&NRF24L01_rtx, CONFIG,0x02 );
+  //  RF24L01_SET_CE_HIGH( );
+  //  HAL_Delay(1100);
+  RF24L01_Set_Mode(&NRF24L01_rtx, MODE_TX);
+//  for (uint8_t i = 0; i < 32; i++)
+//  {
+//    NRF24L01_bus.TxPacket.Txbuffer[i] = i;
+//  }
   NRF24L01_bus.TxPacket.Txlength = 32;
- 
-//  NRF24L01_bus.TxPacket.Txbuffer[2]=123;
-//  NRF24L01_bus.TxPacket.Txbuffer[3]=121;
-//  NRF24L01_bus.TxPacket.Txbuffer[5]=13;
-  
+
+  //  NRF24L01_bus.TxPacket.Txbuffer[2]=123;
+  //  NRF24L01_bus.TxPacket.Txbuffer[3]=121;
+  //  NRF24L01_bus.TxPacket.Txbuffer[5]=13;
+
+Value_True.num_u16=1;
+	memcpy(Value_True.Value_True_u16[0].name,"test",4);
+	Value_True.Value_True_u16[0].value=42;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -141,38 +148,44 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  //NRF24L01_check(&NRF24L01_rtx);
-	 // HAL_Delay(10);
+    ShowValue();
+    // NRF24L01_check(&NRF24L01_rtx);
+    // HAL_Delay(10);
+    // LCD_Fill(&LCD_bus_2,0,0,LCD_W,LCD_H,RED);
+	  HAL_UART_Transmit(&huart1,NRF24L01_bus.TxPacket.Txbuffer , 18, 1000);
+Send_control_message(NRF24L01_rtx,NRF24L01_bus);
+    count++;
+    //NRF24L01_bus.TxPacket.Txbuffer[1] = count;
+	  b++;
 
-	  count++;
-	  NRF24L01_bus.TxPacket.Txbuffer[1]=count;
-//	  	  RF24L01_Set_Mode(&NRF24L01_rtx, MODE_TX);
-//	  NRF24L01_TxPacket(&NRF24L01_rtx, &NRF24L01_bus);
-    //NRF24L01_RxPacket(&NRF24L01_rtx, &NRF24L01_bus);
-	  ReceivePacket_fn(&Value_True);
-	  if(NRF24L01_bus.RxPacket.Rxbuffer[0]==0x11)
-	  {
-		  a=1;
-		RF24L01_Set_Mode(&NRF24L01_rtx, MODE_TX);
-		  for(uint16_t i=0;i<500;i++)
-		  {
-			  NRF24L01_TxPacket(&NRF24L01_rtx, &NRF24L01_bus);
-			  
-		  }	  
-		  NRF24L01_bus.TxPacket.Txbuffer[31]=0x11;
-		  for(uint16_t i=0;i<10;i++)
-		  {
-			  NRF24L01_TxPacket(&NRF24L01_rtx, &NRF24L01_bus);
-		  }
-		  NRF24L01_bus.TxPacket.Txbuffer[31]=0x0;
-		  RF24L01_Set_Mode(&NRF24L01_rtx, MODE_RX);
-		  NRF24L01_bus.RxPacket.Rxbuffer[0]=0x0;
-		  a=0;
-	  }
-	 // memcpy(NRF24L01_bus.TxPacket.Txbuffer,re,PACKET_MAX);
-   // a = NRF24L01_Read_Reg(&NRF24L01_rtx, CONFIG);
-//    b =NRF24L01_bus.RxPacket.Rxbuffer[1];
-   
+	  	//LCD_ShowString(&LCD_bus_2, 1, 1, "NAME", BLACK, WHITE, 12, 0);
+//	LCD_ShowString(&LCD_bus_2, 1, 6, "ID", BLACK, WHITE, 12, 0);
+//	LCD_ShowString(&LCD_bus_2, 1, 10, "VALUE", BLACK, WHITE, 12, 0);
+    //	  	  RF24L01_Set_Mode(&NRF24L01_rtx, MODE_TX);
+    //	  NRF24L01_TxPacket(&NRF24L01_rtx, &NRF24L01_bus);
+    // NRF24L01_RxPacket(&NRF24L01_rtx, &NRF24L01_bus);
+//    ReceivePacket_fn(&Value_True);
+//    if (NRF24L01_bus.RxPacket.Rxbuffer[0] == 0x11)
+//    {
+//      a = 1;
+//      RF24L01_Set_Mode(&NRF24L01_rtx, MODE_TX);
+//      for (uint16_t i = 0; i < 500; i++)
+//      {
+//        NRF24L01_TxPacket(&NRF24L01_rtx, &NRF24L01_bus);
+//      }
+//      NRF24L01_bus.TxPacket.Txbuffer[31] = 0x11;  
+//      for (uint16_t i = 0; i < 10; i++)
+//      {
+//        NRF24L01_TxPacket(&NRF24L01_rtx, &NRF24L01_bus);
+//      }
+//      NRF24L01_bus.TxPacket.Txbuffer[31] = 0x0;
+//      RF24L01_Set_Mode(&NRF24L01_rtx, MODE_RX);
+//      NRF24L01_bus.RxPacket.Rxbuffer[0] = 0x0;
+//      a = 0;
+//    }
+    // memcpy(NRF24L01_bus.TxPacket.Txbuffer,re,PACKET_MAX);
+    // a = NRF24L01_Read_Reg(&NRF24L01_rtx, CONFIG);
+    //    b =NRF24L01_bus.RxPacket.Rxbuffer[1];
   }
   /* USER CODE END 3 */
 }
@@ -224,20 +237,22 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  
-    if (htim == (&htim1))
+
+  if (htim == (&htim1))
   {
-    HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&ADC_Value,20);
-	//NRF_Intercommunication( NRF24L01_rtx, NRF24L01_bus );
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&ADC_Value, 40);
+    ADC1_Value_average();
+    // NRF_Intercommunication( NRF24L01_rtx, NRF24L01_bus );
   }
-  
-      if (htim == (&htim2))
+
+  if (htim == (&htim2))
   {
-    LCD_ShowString(&LCD_bus_2, 1, 1, "NAME", BLACK, WHITE, 1, 0);
-    LCD_ShowString(&LCD_bus_2, 1, 6, "ID", BLACK, WHITE, 1, 0);
-    LCD_ShowString(&LCD_bus_2, 1, 10, "VALUE", BLACK, WHITE, 1, 0);
+	 // a++;
+
+    
     // NRF_Intercommunication( NRF24L01_rtx, NRF24L01_bus );
   }
 }

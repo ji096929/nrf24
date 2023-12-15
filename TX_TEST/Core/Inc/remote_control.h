@@ -2,6 +2,8 @@
 #define __REMOTE_CONTROL_H
 #include <stdbool.h>
 #include <main.h>
+#include "drv_RF24L01.h"
+
 #define MAXJOY 65535
 
 
@@ -37,6 +39,6 @@ typedef struct
 } remote_control;
 extern uint8_t _buf[18];
 extern remote_control ctrl;
-
+void Send_control_message(NRF24L01_rtx_t NRF24L01_rtx, NRF24L01_bus_t NRF24L01_bus);
 #endif
 

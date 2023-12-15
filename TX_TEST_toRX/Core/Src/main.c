@@ -22,6 +22,7 @@
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -106,6 +107,7 @@ int main(void)
   MX_ADC2_Init();
   MX_SPI2_Init();
   MX_TIM1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim1);
   HAL_TIM_Base_Start_IT(&htim2);
@@ -118,9 +120,9 @@ int main(void)
     NRF24L01_Set_Power(&NRF24L01_rtx, PWR_18DB);
 
       NRF24L01_Write_Reg(&NRF24L01_rtx,RF_SETUP ,0x06 );
-			  RF24L01_Set_Mode(&NRF24L01_rtx, MODE_TX);
+			  RF24L01_Set_Mode(&NRF24L01_rtx, MODE_RX);
     //NRF24L01_Write_Reg(&NRF24L01_rtx, CONFIG,0x02 );
-    // 0x03接收，0x02发送
+    // 0x03接收�?0x02发�??
     //RF24L01_SET_CE_HIGH();
     
   NRF24L01_bus.TxPacket.Txlength = 32;
@@ -152,13 +154,13 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		TransmitParameter();
-		HAL_Delay(time);
+		//TransmitParameter();
+		//HAL_Delay(time);
 	 // NRF24L01_check(&NRF24L01_rtx);
 	 // HAL_Delay(10);
 	 // count++;
 	 // NRF24L01_bus.TxPacket.Txbuffer[1]=count;
-    //NRF24L01_RxPacket(&NRF24L01_rtx, &NRF24L01_bus);
+    NRF24L01_RxPacket(&NRF24L01_rtx, &NRF24L01_bus);
     //NRF24L01_TxPacket(&NRF24L01_rtx,&NRF24L01_bus);
     a = NRF24L01_Read_Reg(&NRF24L01_rtx, STATUS);
     b =NRF24L01_bus.RxPacket.Rxbuffer[1];

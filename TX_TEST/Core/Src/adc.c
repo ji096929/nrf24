@@ -184,26 +184,26 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 
 /* USER CODE BEGIN 1 */
 
-//void ADC1_Value_average(void)
-//{
-//	for(int i=0;i<10;i++)
-//	{
-//		left_x_sum += ADC_Value[i][0];//行增加，列不变
-//		left_y_sum += ADC_Value[i][1];
-//		right_x_sum += ADC_Value[i][2];
-//		right_y_sum += ADC_Value[i][3];
-//		battery_sum += ADC_Value[i][4];
-//	}
-//	left_x = left_x_sum/10 ;//求均值
-//	left_y = left_y_sum/10 ;
-//	right_x = right_x_sum/10;
-//	right_y = right_y_sum/10;
-//	battery = battery_sum/10;
-//	left_x_sum=0;//求和变量清零不影响下次调用
-//	left_y_sum=0;
-//	right_x_sum=0;
-//	right_y_sum=0;
-//	battery_sum=0;
-//}
+void ADC1_Value_average(void)
+{
+	for(int i=0;i<10;i++)
+	{
+		left_x_sum += ADC_Value[i][0];//行增加，列不变
+		left_y_sum += ADC_Value[i][1];
+		right_x_sum += ADC_Value[i][2];
+		right_y_sum += ADC_Value[i][3];
+		//battery_sum += ADC_Value[i][4];
+	}
+	left_x = left_x_sum/10 ;//求均值
+	left_y = left_y_sum/10 ;
+	right_x = right_x_sum/10;
+	right_y = right_y_sum/10;
+	//battery = battery_sum/10;
+	left_x_sum=0;//求和变量清零不影响下次调用
+	left_y_sum=0;
+	right_x_sum=0;
+	right_y_sum=0;
+	//battery_sum=0;
+}
 
 /* USER CODE END 1 */

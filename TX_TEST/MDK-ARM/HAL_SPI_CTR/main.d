@@ -30,10 +30,12 @@ hal_spi_ctr\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 hal_spi_ctr\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 hal_spi_ctr\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 hal_spi_ctr\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+hal_spi_ctr\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 hal_spi_ctr\main.o: ../Core/Inc/adc.h
 hal_spi_ctr\main.o: ../Core/Inc/dma.h
 hal_spi_ctr\main.o: ../Core/Inc/spi.h
 hal_spi_ctr\main.o: ../Core/Inc/tim.h
+hal_spi_ctr\main.o: ../Core/Inc/usart.h
 hal_spi_ctr\main.o: ../Core/Inc/gpio.h
 hal_spi_ctr\main.o: ../Drv/drv_periph/inc/drv_RF24L01.h
 hal_spi_ctr\main.o: ../Drv/drv_mcu/inc/drv_spi.h
@@ -42,3 +44,5 @@ hal_spi_ctr\main.o: ../Core/Inc/debug.h
 hal_spi_ctr\main.o: D:\software\keil5\ARM\ARMCC\Bin\..\include\string.h
 hal_spi_ctr\main.o: ../Drv/app_lcd/lcd.h
 hal_spi_ctr\main.o: ../Drv/bsp_lcd/lcd_bsp.h
+hal_spi_ctr\main.o: ../Core/Inc/remote_control.h
+hal_spi_ctr\main.o: D:\software\keil5\ARM\ARMCC\Bin\..\include\stdbool.h

@@ -1,4 +1,7 @@
-SET PATH=D:\software\keil5\ARM\ARMCC\Bin;E:\software\vm17\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\软件\Bandizip\;D;\software\runtime\win64;D:\software\bin;D:\software\SciTools/bin/pc-win32;D:\文档\edge下载\临时文档\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\mingw64\bin;;;D:\software\Git\cmd;C:\Users\龙文章\AppData\Local\Microsoft\WindowsApps;D:\软件\Microsoft VS Code\bin;C:\Users\龙文章\AppData\Local\GitHubDesktop\bin
+SET PATH=D:\software\keil5\ARM\ARMCC\Bin;E:\software\vm17\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\软件\Bandizip\;D;\software\runtime\win64;D:\software\bin;D:\software\SciTools/bin/pc-win32;D:\文档\edge下载\临时文档\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\mingw64\bin;;;D:\software\Git\cmd;C:\mingw\gytx_x86_64-12.1.0-posix-seh\mingw64\bin;C:\Users\龙文章\AppData\Local\Microsoft\WindowsApps;D:\软件\Microsoft VS Code\bin;C:\Users\龙文章\AppData\Local\GitHubDesktop\bin;C:/MinGW/mingw64/bin
+SET ARMCC5_ASMOPT=--diag_suppress=9931
+SET ARMCC5_CCOPT=--diag_suppress=9931
+SET ARMCC5_LINKOPT=--diag_suppress=9931
 SET CPU_TYPE=STM32F103C8
 SET CPU_VENDOR=STMicroelectronics
 SET UV2_TARGET=HAL_SPI_CTR

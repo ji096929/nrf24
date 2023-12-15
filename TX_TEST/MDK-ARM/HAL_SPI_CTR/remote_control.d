@@ -32,6 +32,8 @@ hal_spi_ctr\remote_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_
 hal_spi_ctr\remote_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 hal_spi_ctr\remote_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 hal_spi_ctr\remote_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+hal_spi_ctr\remote_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 hal_spi_ctr\remote_control.o: ../Drv/drv_periph/inc/drv_RF24L01.h
 hal_spi_ctr\remote_control.o: ../Drv/drv_mcu/inc/drv_spi.h
 hal_spi_ctr\remote_control.o: ../Drv/drv_periph/inc/drv_RF24L01.h
+hal_spi_ctr\remote_control.o: ../Core/Inc/adc.h
